@@ -7,9 +7,34 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-p, h2 {
+p,
+h2 {
     margin: 0;
     padding: 0;
+}
+
+.play-button {
+    background-color: #FF0000;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 0.5rem 0.75rem;
+    border-style: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    margin-top: 0.3rem;
+}
+
+.play-button span {
+    margin-right: 0.5rem;
+}
+
+.play-button i {
+    font-size: 1.8rem;
 }
 
 header {
@@ -41,6 +66,10 @@ header .account-info {
     flex-direction: row;
     align-items: center;
     gap: 1.25rem;
+}
+
+header .logo-wrapper .account-info {
+    display: none;
 }
 
 header .account-info img {
@@ -94,12 +123,6 @@ main .content strong {
     color: #FF0000;
 }
 
-main .details {
-    display: flex;
-    flex-direction: row;
-    gap: 1.2rem;
-}
-
 main .details .rating i {
     color: #FF0000;
     letter-spacing: -3.px;
@@ -115,7 +138,14 @@ main .details .rating .source {
     color: silver;
 }
 
-main .details .age {
+.details {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    color: white;
+}
+
+.details .age {
     font-size: 0.9rem;
     border-style: solid;
     border-color: white;
@@ -123,19 +153,242 @@ main .details .age {
     border-radius: 0.2rem;
 }
 
-main .details .duration {
+.details .duration {
     font-weight: 500;
     font-size: 0.9rem;
 }
 
 section {
-    background-color: goldenrod;
+    margin-top: 0.5rem;
+}
+
+section .section-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .section-header h3 {
+    font-size: 1.1rem;
+}
+
+section .section-header a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.movie-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-cards .movie-card {
+    width: 30%;
+    height: 30vh;
+}
+
+.movie-cards .movie-card h4 {
+    color: white;
+    margin: 0;
+}
+
+.movie-cards .movie-card .play-button {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.movie-cards .wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.1rem);
     width: 100%;
-    height: 25vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.movie-cards .movie-card {
+    background-image: url('images/Inception.jpg');
 }
 
 footer {
-    background-color: blue;
-    height: 15vh;
     width: 100%;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+footer .disclaimer {
+    width: 50%;
+}
+
+footer .disclaimer nav {
+    display: flex;
+    gap: 1.8rem;
+}
+
+footer .disclaimer nav a {
+    text-decoration: none;
+    color: black;
+}
+
+footer .disclaimer p {
+    margin-top: 1.2rem;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+footer .social-media {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+footer .social-media .links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: -0.4rem;
+}
+
+footer .social-media .links img {
+    width: 3rem;
+}
+
+footer .apps {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+footer .apps .links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: -0.4rem;
+}
+
+footer .apps .links img {
+    width: 100%;
+    max-width: 10rem;
+}
+
+@media screen and (max-width: 400px) {
+
+    header {
+        flex-direction: column;
+        height: fit-content;
+        gap: 1.25rem;
+    }
+
+    header nav {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    header nav a {
+        background-color: #FF0000;
+        color: white;
+        padding: 1rem 0;
+    }
+
+    header .account-info img {
+        height: 3vh;
+    }
+
+    header .account-info .notifications {
+        margin-top: 0.25rem;
+    }
+
+    header .account-info.desktop {
+        display: none;
+    }
+
+    header .logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    header .logo-wrapper .account-info {
+        display: flex;
+        align-items: center;
+    }
+
+    main {
+        height: auto;
+        padding: 0;
+    }
+
+    main .content {
+        max-width: 100%;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    main h2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: white;
+        text-align: center;
+    }
+
+    .movie-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .movie-cards .movie-card {
+        width: 100%;
+    }
+
+    .movie-cards .wrapper {
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    footer .disclaimer {
+        width: 100%;
+    }
+
+    footer .disclaimer nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    footer .disclaimer p {
+        text-align: justify;
+    }
+
+    footer .social-media {
+        width: 100%;
+        align-items: center;
+    }
+
+    footer .apps {
+        width: 100%;
+        align-items: center;
+    }
+
+    footer .apps .links {
+        flex-direction: column;
+        gap: 0;
+    }
 }
